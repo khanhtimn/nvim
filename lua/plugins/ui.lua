@@ -1,21 +1,4 @@
 return {
-  -- Add monokai-pro
-  {
-    "loctvl842/monokai-pro.nvim",
-    opts = {
-      transparent_background = true,
-      terminal_color = true,
-      devicons = true,
-    },
-  },
-
-  -- Configure LazyVim to load monokai-pro
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "monokai-pro",
-    },
-  },
 
   {
     "nvim-lualine/lualine.nvim",
@@ -61,4 +44,39 @@ return {
   --     },
   --   },
   -- },
+  {
+    "nvimdrv/dashboard-nvim",
+    event = "VimEnter",
+    opts = function(_, opts)
+      local logo = [[
+                    :..          :~^                        
+                  ~G&&#BGP577J5G#&Y.                        
+                ^P@@@@@@@@@@@@@@P^                          
+              :5@@@@#5B@@@@@@@@&J:                          
+            .J&@@@@Y..5@@@@@@@@@@@G7.        JY^            
+           ^5GPYJ?^ 7#@@@@&B@@@@@@@@&5!.     !@@G7.         
+           .      ^G@@@@@P^ ^JB@@@@@@@@#Y^   .&@@@#Y^       
+                :Y@@@@@G~      J@@@@@@@@@@B?: ~G&@@@@G7:    
+               7#@@@@&J~!?J~    B@@@@@&@@@@@&P!.:?&@@@@G    
+             ~G@@@@@@&&@@@@@#Y~ !@@@@@#~Y#@@@@@#Y5@@@@@J    
+   .J~     :5@@@@@@@@@@@@@@@@&BJ.G@@@@@? .7G@@@@@@@@@@@^    
+    ?@BJ: ?&@@@@@@@@&#BP5J!~:.   ~@@@@@?    ^B@@@@@@@@Y     
+     G@@&#@@@@@@@5!^:  ~GJ        5@@P^    :P@@@@@@@@@Y     
+     ^@@@@@@@@@G~    :5@@&:       :G! .^~7Y&@@@@@@#B@@@~    
+     !@@@@@@@@&?.   ~&@@@@5  .:^!7J5PB&@@@@@@@@@&J. ~5&B    
+     B@@@@@@@@@@&5~ :&@@@@@^!G&@@@@@@@@@@@@@@@@P^     .7^   
+    ^@@@@@G7P&@@@@@B75@@@@@P .!5&@@@@##@@@@@@#!             
+    7@@@@@G!.:?B@@@@@&@@@@@@~   :77~^7B@@@@&J.              
+     ^Y#@@@@#Y  ~Y#@@@@@@@@@B:     ^P@@@@@P^                
+       .!P&@@@7   .!P&@@@@@@@@G7.:Y@@@@@#!     ..           
+          :JB@G      :7G@@@@@@@@#&@@@@&J :J5PGBG!           
+             !Y.        ^JB@@@@@@@@@@B^ J&@@@@Y:            
+                           ~B@@@@@@@@&GB@@@@P^              
+                          :5@@@@@@@@@@@@@@G~                
+                        .7B#PY?!~?Y5PGB#B!                  
+]]
+      logo = string.rep("\n", 8) .. logo .. "\n\n"
+      opts.config.header = vim.split(logo, "\n")
+    end,
+  },
 }

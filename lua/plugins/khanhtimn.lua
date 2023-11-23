@@ -9,7 +9,24 @@
 -- * disable/enabled LazyVim plugins
 -- * override the configuration of LazyVim plugins
 return {
+  
+  -- Add monokai-pro
+  {
+    "loctvl842/monokai-pro.nvim",
+    opts = {
+      transparent_background = true,
+      terminal_color = true,
+      devicons = true,
+    },
+  },
 
+  -- Configure LazyVim to load monokai-pro
+  {
+    "LazyVim/LazyVim",
+    opts = {
+      colorscheme = "monokai-pro",
+    },
+  },
   {
     "smjonas/inc-rename.nvim",
     cmd = "IncRename",
