@@ -13,9 +13,3 @@ vim.keymap.set({ "n", "v", "x" }, "<C-q>", '"*yy', OTPS)
 
 -- Select all (Ctrl-A)
 vim.keymap.set({ "n", "v", "x" }, "<C-a>", "ggVG")
-
---Switch tabs
-vim.keymap.set("n", "<C-tab>", ":tabnex<Return>", OTPS)
-
---New tab
-vim.keymap.set("n", "<C-t>", "tabedit", OTPS)

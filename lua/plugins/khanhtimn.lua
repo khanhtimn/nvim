@@ -9,23 +9,12 @@
 -- * disable/enabled LazyVim plugins
 -- * override the configuration of LazyVim plugins
 return {
-  -- add monokai-pro
-  { "loctvl842/monokai-pro.nvim",
-    opts = {
-      transparent_background = true,
-      terminal_color = true,
-      devicons = true,
-    },
-  },
 
-  -- Configure LazyVim to load monokai-pro
   {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "monokai-pro",
-    },
+    "smjonas/inc-rename.nvim",
+    cmd = "IncRename",
+    config = true,
   },
-
   -- change trouble config
   {
     "folke/trouble.nvim",
@@ -106,7 +95,6 @@ return {
 
   -- for typescript, LazyVim also includes extra specs to properly setup lspconfig,
   -- treesitter, mason and typescript.nvim. So instead of the above, you can use:
-  { import = "lazyvim.plugins.extras.lang.typescript" },
 
   -- add more treesitter parsers
 
@@ -137,6 +125,9 @@ return {
     opts = {
       ensure_installed = {
         "stylua",
+        "selene",
+        "luacheck",
+        "typescript-language-server",
         "shellcheck",
         "shfmt",
         "flake8",
