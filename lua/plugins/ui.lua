@@ -2,6 +2,7 @@ return {
 
   {
     "nvim-lualine/lualine.nvim",
+    priority = 1000,
     event = "VeryLazy",
     opts = {
       options = {
@@ -75,8 +76,22 @@ return {
                           :5@@@@@@@@@@@@@@G~                
                         .7B#PY?!~?Y5PGB#B!                  
 ]]
-      logo = string.rep("\n", 8) .. logo .. "\n\n"
-      opts.config.header = vim.split(logo, "\n")
+
+      local logo2 = [[
+
+  ____                                      ____    __  
+ /_  _\    ____       ___ _     _ _____    /_  _\   FJ  
+ [J  L]   F __ J     F __` L   J '_  _ `,  [J  L]  J  L 
+  |  |   | _____J   | |--| |   | |_||_| |   |  |   |  | 
+  F  J   F L___--.  F L__J J   F L LJ J J   F  J   F  J 
+ J____L J\______/F J\____,__L J__L LJ J__L J____L J____L
+ |____|  J______F   J____,__F |__L LJ J__| |____| |____|
+                                                        
+
+     ]]
+
+      logo2 = string.rep("\n", 8) .. logo2 .. "\n\n"
+      opts.config.header = vim.split(logo2, "\n")
     end,
   },
 }
