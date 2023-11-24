@@ -9,7 +9,4 @@ vim.opt.tabstop = 4
 vim.opt.expandtab = true
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
-
--- Underline curl
-vim.cmd([[let &t_Cs = "\e[4:3m]"]])
-vim.cmd([[let &t_Ce = "\e[4:0m]"]])
+vim.opt.smartindent = true
