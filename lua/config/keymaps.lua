@@ -4,12 +4,12 @@
 OTPS = { noremap = true, silent = true }
 
 -- Ctrl-C / Ctrl-V
-vim.keymap.set({ "n", "v", "x" }, "<C-v>", '"+p', OTPS)
+--vim.keymap.set({ "n", "v", "x" }, "<C-v>", '"+p', OTPS)
 
-vim.keymap.set({ "n", "v", "x" }, "<C-c>", '"*y', OTPS)
+--vim.keymap.set({ "n", "v", "x" }, "<C-c>", '"*y', OTPS)
 
 --  all line
-vim.keymap.set({ "n", "v", "x" }, "<C-q>", '"*yy', OTPS)
+--vim.keymap.set({ "n", "v", "x" }, "<C-q>", '"*yy', OTPS)
 
 -- Select all (Ctrl-A)
 vim.keymap.set({ "n", "v", "x" }, "<C-a>", "ggVG")
