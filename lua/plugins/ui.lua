@@ -29,6 +29,8 @@ return {
   {
     "rcarriga/nvim-notify",
     opts = {
+      render = "minimal",
+      fps = 144,
       timeout = 5000,
     },
   },
@@ -47,7 +49,7 @@ return {
   --   },
   -- },
   {
-    "nvimdrv/dashboard-nvim",
+    "nvimdev/dashboard-nvim",
     event = "VimEnter",
     opts = function(_, opts)
       local logo = [[
