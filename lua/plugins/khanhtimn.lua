@@ -19,7 +19,6 @@ return {
       --devicons = true,
     },
   },
-
   -- Configure LazyVim to load monokai-pro
   {
     "LazyVim/LazyVim",
