@@ -9,14 +9,14 @@
 -- * disable/enabled LazyVim plugins
 -- * override the configuration of LazyVim plugins
 return {
-  
-  -- Add monokai-pro
+ -- Add oneokai
   {
-    "loctvl842/monokai-pro.nvim",
+    "AxelGard/oneokai.nvim",
     opts = {
-      transparent_background = true,
-      terminal_color = true,
-      devicons = true,
+      style = 'darker',
+      transparent = true,
+      term_color = true,
+      --devicons = true,
     },
   },
 
@@ -24,14 +24,19 @@ return {
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "monokai-pro",
+      colorscheme = "oneokai",
     },
   },
+
+  -- IncRename
   {
     "smjonas/inc-rename.nvim",
     cmd = "IncRename",
     config = true,
   },
+  -- Enable IncRename
+  { "smjonas/inc-rename.nvim", enabled = true},
+
   -- change trouble config
   {
     "folke/trouble.nvim",
@@ -39,7 +44,7 @@ return {
     opts = { use_diagnostic_signs = true },
   },
 
-  -- enable/disable trouble
+  -- enable trouble
   { "folke/trouble.nvim", enabled = true },
 
   -- add symbols-outline
@@ -50,6 +55,9 @@ return {
     config = true,
   },
 
+  -- enable symbols-outline
+  { "simrat39/symbols-outline.nvim", enabled = true},
+
   -- override nvim-cmp and add cmp-emoji
   {
     "hrsh7th/nvim-cmp",
@@ -59,6 +67,8 @@ return {
       table.insert(opts.sources, { name = "emoji" })
     end,
   },
+  -- enable nvim-cmp
+  { "hrsh7th/nvim-cmp", enabled = true},
 
   -- change some telescope options and a keymap to browse plugin files
   {
@@ -94,6 +104,8 @@ return {
       end,
     },
   },
+  -- enable telescope
+  { "telescope.nvim", enabled = true},
 
   -- add pyright to lspconfig
   {

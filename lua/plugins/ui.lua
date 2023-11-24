@@ -6,7 +6,8 @@ return {
     event = "VeryLazy",
     opts = {
       options = {
-        theme = "monokai-pro",
+        transparent = true,
+        theme = "oneokai",
       },
     },
   },
@@ -78,7 +79,6 @@ return {
 ]]
 
       local logo2 = [[
-
   ____                                      ____    __  
  /_  _\    ____       ___ _     _ _____    /_  _\   FJ  
  [J  L]   F __ J     F __` L   J '_  _ `,  [J  L]  J  L 
@@ -86,8 +86,6 @@ return {
   F  J   F L___--.  F L__J J   F L LJ J J   F  J   F  J 
  J____L J\______/F J\____,__L J__L LJ J__L J____L J____L
  |____|  J______F   J____,__F |__L LJ J__| |____| |____|
-                                                        
-
      ]]
 
       logo2 = string.rep("\n", 8) .. logo2 .. "\n\n"
