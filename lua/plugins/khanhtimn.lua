@@ -27,15 +27,6 @@ return {
     },
   },
 
-  -- IncRename
-  {
-    "smjonas/inc-rename.nvim",
-    cmd = "IncRename",
-    config = true,
-  },
-  -- Enable IncRename
-  { "smjonas/inc-rename.nvim", enabled = true},
-
   -- change trouble config
   {
     "folke/trouble.nvim",
@@ -140,7 +131,21 @@ return {
     end,
   },
 
-  {'akinsho/toggleterm.nvim', version = "*", config = true},
+  {
+    "akinsho/toggleterm.nvim",
+    lazy = true,
+    keys = {
+      {
+        "<C-t>",
+        function()
+          local Util = require("lazyvim.util")
+          local count = vim.v.count1
+          require("toggleterm").toggle(count, 10, Util.root.get(), "horizontal")
+        end,
+        desc = "ToggleTerm (horizontal root_dir)",
+      },
+    },
+  },
 
   -- add jsonls and schemastore packages, and setup treesitter for json, json5 and jsonc
   { import = "lazyvim.plugins.extras.lang.json" },
