@@ -1,58 +1,59 @@
 return {
 
-  {
-    "nvim-lualine/lualine.nvim",
-    priority = 1000,
-    event = "VeryLazy",
-    opts = {
-      options = {
-        transparent = true,
-        theme = "oneokai",
-      },
-    },
-  },
-
-  {
-    "folke/noice.nvim",
-    opts = function(_, opts)
-      table.insert(opts.routes, {
-        filter = {
-          event = "notify",
-          find = "No information available",
+    {
+        "nvim-lualine/lualine.nvim",
+        priority = 1000,
+        event = "VeryLazy",
+        opts = {
+            options = {
+                transparent = true,
+                theme = "oneokai",
+            },
         },
-        opts = { skip = true },
-      })
-      opts.presets.lsp_doc_border = true
-    end,
-  },
-
-  {
-    "rcarriga/nvim-notify",
-    opts = {
-      render = "minimal",
-      fps = 144,
-      timeout = 5000,
     },
-  },
 
-  -- {
-  --   "akinsho/bufferline.nvim",
-  --   keys = {
-  --     { "<Tab>", "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
-  --     { "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Previous tab" },
-  --   },
-  --   opts = {
-  --    options = {
-  --        mode = "tabs",
-  --       show_buffer_close_icons = false,
-  --     },
-  --   },
-  -- },
-  {
-    "nvimdev/dashboard-nvim",
-    event = "VimEnter",
-    opts = function(_, opts)
-      local logo = [[
+    {
+        "folke/noice.nvim",
+        opts = function(_, opts)
+            table.insert(opts.routes, {
+                filter = {
+                    event = "notify",
+                    find = "No information available",
+                },
+                opts = { skip = true },
+            })
+            opts.presets.lsp_doc_border = true
+        end,
+    },
+
+    {
+        "rcarriga/nvim-notify",
+        opts = {
+            render = "minimal",
+            fps = 144,
+            timeout = 5000,
+            background_colour = "#000000",
+        },
+    },
+
+    -- {
+    --   "akinsho/bufferline.nvim",
+    --   keys = {
+    --     { "<Tab>", "<Cmd>BufferLineCycleNext<CR>", desc = "Next tab" },
+    --     { "<S-Tab>", "<Cmd>BufferLineCyclePrev<CR>", desc = "Previous tab" },
+    --   },
+    --   opts = {
+    --    options = {
+    --        mode = "tabs",
+    --       show_buffer_close_icons = false,
+    --     },
+    --   },
+    -- },
+    {
+        "nvimdev/dashboard-nvim",
+        event = "VimEnter",
+        opts = function(_, opts)
+            local logo = [[
                     :..          :~^                        
                   ~G&&#BGP577J5G#&Y.                        
                 ^P@@@@@@@@@@@@@@P^                          
@@ -80,7 +81,7 @@ return {
                         .7B#PY?!~?Y5PGB#B!                  
 ]]
 
-      local logo2 = [[
+            local logo2 = [[
  _____                                                                   _____ 
 ( ___ )-----------------------------------------------------------------( ___ )
  |   |                                                                   |   | 
@@ -96,8 +97,8 @@ return {
 (_____)-----------------------------------------------------------------(_____)
      ]]
 
-      logo2 = string.rep("\n", 8) .. logo2 .. "\n\n"
-      opts.config.header = vim.split(logo2, "\n")
-    end,
-  },
+            logo2 = string.rep("\n", 8) .. logo2 .. "\n\n"
+            opts.config.header = vim.split(logo2, "\n")
+        end,
+    },
 }
