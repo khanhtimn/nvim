@@ -30,7 +30,7 @@ return {
         "rcarriga/nvim-notify",
         opts = {
             render = "minimal",
-            fps = 144,
+            fps = 60,
             timeout = 5000,
             background_colour = "#000000",
         },
