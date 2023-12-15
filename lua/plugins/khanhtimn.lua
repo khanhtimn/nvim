@@ -142,7 +142,7 @@ return {
         function()
           local Util = require("lazyvim.util")
           local count = vim.v.count1
-          require("toggleterm").toggle(count, 10, Util.root.get(), "horizontal")
+          require("toggleterm").toggle(count, 14, Util.root.get(), "horizontal")
         end,
         desc = "ToggleTerm (horizontal root_dir)",
       },
