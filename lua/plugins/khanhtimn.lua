@@ -35,6 +35,15 @@ return {
   -- change some telescope options and a keymap to browse plugin files
   {
     "nvim-telescope/telescope.nvim",
+    dependencies = {
+      {
+        "nvim-telescope/telescope-fzf-native.nvim",
+        build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release",
+        config = function()
+          require("telescope").load_extension("fzf")
+        end,
+      },
+    },
     keys = {
       -- add a keymap to browse plugin files
       -- stylua: ignore
@@ -52,16 +61,6 @@ return {
         sorting_strategy = "ascending",
         winblend = 0,
       },
-    },
-  },
-  {
-    "telescope.nvim",
-    dependencies = {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      build = "make",
-      config = function()
-        require("telescope").load_extension("fzf")
-      end,
     },
   },
   -- since `vim.tbl_deep_extend`, can only merge tables and not lists, the code above
@@ -85,8 +84,7 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        "stylua",
-        "shellcheck",
+        "clangd",
       },
     },
   },
